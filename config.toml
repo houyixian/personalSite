@@ -1,6 +1,6 @@
 baseURL = "https://blog.ilifeapp.com"
 languageCode = "zh-CN"
-title = "飞雪无情的博客"
+title = "Quiet~仙哥的博客"
 theme = "maupassant"
 publishDir = "docs"
 googleAnalytics = ""  # UA-XXXXXXXX-X
@@ -16,13 +16,13 @@ summaryLength = 140
 disqusShortname = "yourdiscussshortname"  ## 是否开启disqus评论，不要和utteranc同时开启
 
 [author]
-  name = "飞雪无情"
+  name = "Quiet~仙哥"
 
 [params]
-  author = "飞雪无情"
-  subtitle = "专注于Android、Java、Go语言(golang)、移动互联网、项目管理、软件架构"
-  keywords = "golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序"
-  description = "专注于IT互联网，包括但不限于Go语言(golang)、Java、Android、Python、项目管理、抖音分析、软件架构等"
+  author = "Quiet～仙哥"
+  subtitle = "iOS、swift、健身、科学"
+  keywords = "iOS,swift,Quiet～仙哥,博客"
+  description = "热爱移动互联网，包括但不限于iOS、swift等"
   busuanzi = true #启用不算子网页统计
   googleAd = "ca-pub-4031353640611810"  #ca-pub-xxxxxxxxxxxxxx
   localSearch = true # 启用本地搜索
@@ -39,9 +39,9 @@ disqusShortname = "yourdiscussshortname"  ## 是否开启disqus评论，不要�
 ## 友情链接，可以多个
 
 [[params.links]]
-  title = "飞雪无情的博客"
-  name = "飞雪无情的博客"
-  url = "https://www.flysnow.org/"
+  title = "暂未填写"
+  name = "暂未填写"
+  url = ""
 
 [[params.links]]
   title = "Android Gradle权威指南"
