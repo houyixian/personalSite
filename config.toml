@@ -1,103 +1,100 @@
-baseURL = "https://www.flysnow.org"
-languageCode = "zh-CN"
-title = "飞雪无情的博客"
-theme = "maupassant"
-publishDir = "docs"
-googleAnalytics = ""  # UA-XXXXXXXX-X
+# This is a simple configuration.
+# If you want to see the full configuration, please check `full-config.toml` .
+# And see https://gohugo.io/getting-started/configuration/ .
 
-## 保持分类的原始名字（false会做转小写处理）
-preserveTaxonomyNames = true
-## 是否禁止URL Path转小写
-disablePathToLower = true
+baseURL = "http://localhost:1313/"
+title = "Jane - A super concise theme for Hugo"
+enableRobotsTXT = true
+enableEmoji = true
+theme = "jane"
 
-hasCJKLanguage = true
-summaryLength = 140
+hasCJKLanguage = true     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
+paginate = 3              # Number of articles displayed on the homepage  # 首页每页显示的文章数
+rssLimit = 20             # Limit Entry Count to Rss file # 限制 Rss 文章输出数量
+disqusShortname = ""      # disqus_shortname
+googleAnalytics = ""      # UA-XXXXXXXX-X
+copyright = ""            # default: author.name ↓        # 默认为下面配置的author.name ↓
 
-disqusShortname = "yourdiscussshortname"  ## 是否开启disqus评论，不要和utteranc同时开启
+# language support # en / zh-cn / other... translations present in i18n/
+defaultContentLanguage = "en"           # Default language to use
+[languages.en]
+  languageCode = "en"
 
-[author]
-  name = "飞雪无情"
+[author]                  # essential                     # 必需
+  name = "xianmin"
+
+[sitemap]                 # essential                     # 必需
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[[menu.main]]             # config your menu              # 配置目录
+  name = "This is Home"
+  weight = 10
+  identifier = "home"
+  url = "/"
+[[menu.main]]
+  name = "Archives"
+  weight = 20
+  identifier = "archives"
+  url = "/post/"
+[[menu.main]]
+  name = "Tags"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
+[[menu.main]]
+  name = "Categories"
+  weight = 40
+  identifier = "categories"
+  url = "/categories/"
+[[menu.main]]
+  name = "external-link"
+  weight = 50
+  url = "https://gohugo.io"
+
 
 [params]
-  author = "飞雪无情"
-  subtitle = "专注于Android、Java、Go语言(golang)、移动互联网、项目管理、软件架构"
-  keywords = "golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序"
-  description = "专注于IT互联网，包括但不限于Go语言(golang)、Java、Android、Python、项目管理、抖音分析、软件架构等"
-  busuanzi = true #启用不算子网页统计
-  googleAd = "ca-pub-4031353640611810"  #ca-pub-xxxxxxxxxxxxxx
-  localSearch = true # 启用本地搜索
+  since = "2017"            # Site creation time          # 站点建立时间
+  homeFullContent = false   # if false, show post summaries on home page. Othewise show full content.
+  rssFullContent = true     # if false, Rss feed instead of the summary
 
-  # 这里我存放在了主题的static文件夹里，根目录的似乎也可以
-  customCSS = ['douban.css', 'other.css']
-  # if ['custom.css'], load '/static/css/custom.css' file
-  customJS = ['douban.js']
-  # if ['custom.js'], load '/static/js/custom.js' file
+  # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
+  logoTitle = "Jane"        # default: the title value    # 默认值: 上面设置的title值
+  keywords = ["Hugo", "theme","jane"]
+  description = "Hugo theme jane example site."
 
-  # 全局开关，你也可以在每一篇内容的 front matter 中针对单篇内容关闭或开启某些功能
-  toc = true  # 是否开启目录
+  # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
+  dateFormatToUse = "2006-01-02"
 
-## 友情链接，可以多个
+  # 一些全局开关，你也可以在每一篇内容的 front matter 中针对单篇内容关闭或开启某些功能，在 archetypes/default.md 查看更多信息。
+  # Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.
+  toc = true                                                                            # 是否开启目录
+  photoswipe = true         # see https://github.com/dimsemenov/PhotoSwipe            # 是否启用PhotoSwipe（图片可点击）
+  contentCopyright = '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'
 
-[[params.links]]
-  title = "飞雪无情的博客"
-  name = "飞雪无情的博客"
-  url = "https://www.flysnow.org/"
+  # Link custom CSS and JS assets
+  #   (relative to /static/css and /static/js respectively)
+  customCSS = []            # if ['custom.css'], load '/static/css/custom.css' file
+  customJS = []             # if ['custom.js'], load '/static/js/custom.js' file
 
-[[params.links]]
-  title = "Android Gradle权威指南"
-  name = "Android Gradle权威指南"
-  url = "http://yuedu.baidu.com/ebook/14a722970740be1e640e9a3e"
-
-## 侧边栏广告位
-[[params.ads]]
-  title = "【2019双12】ALL IN CLoud 低至1折"
-  url = "https://www.aliyun.com/minisite/goods?userCode=jdg9oj97&share_source=copy_link"
-  img = "https://img.alicdn.com/tfs/TB1_rYHo7P2gK0jSZPxXXacQpXa-690-388.jpg"
-[[params.ads]]
-  title = "助力产业智慧升级，云服务器首年88元起，更有千元代金券礼包免费领！"
-  url = "https://cloud.tencent.com/act/cps/redirect?redirect=1048&cps_key=14ff722692ac784fa8c3301c8c28d924&from=console"
-  img = "https://upload-dianshi-1255598498.file.myqcloud.com/345-7c71532bd4935fbdd9a67c1a71e577b1767b805c.200%E7%89%88%E6%9C%ACB.jpg"
-[[params.ads]]
-  title = "【渠道专享低折扣】11月特惠 限时2折"
-  url = "https://www.aliyun.com/acts/limit-buy?userCode=jdg9oj97"
-  img = "https://img.alicdn.com/tfs/TB1hblJl7Y2gK0jSZFgXXc5OFXa-750-400.jpg"
-
-## 配置 utteranc评论,教程参考 https://utteranc.es/
-[params.utteranc]
-  enable = true
-  repo = "your github repo" ##换成自己得
-  issueTerm = "pathname"
-  theme = "github-light"
-
-## 开启版权声明，协议名字和链接都可以换
-[params.cc]
-    name = "知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议"
-    link = "https://creativecommons.org/licenses/by-nc-nd/4.0/"
-
-## 配置代码高亮
-[markup]
-  [markup.highlight]
-    lineNos = true
-    style = "github"
-
-## 配置网站菜单
-
-[menu]
-
-  [[menu.main]]
-    identifier = "tools"
-    name = "工具"
-    url = "/tools/"
-    weight = 2
-
-  [[menu.main]]
-    identifier = "archives"
-    name = "归档"
-    url = "/archives/"
-    weight = 3
-
-  [[menu.main]]
-    identifier = "about"
-    name = "关于"
-    url = "/about/"
-    weight = 4
+  [params.social]                                         # 社交链接
+    a-email = "mailto:your@email.com"
+    b-stack-overflow = "http://localhost:1313"
+    c-twitter = "http://localhost:1313"
+    d-facebook = "http://localhost:1313"
+    e-linkedin = "http://localhost:1313"
+    f-google = "http://localhost:1313"
+    g-github = "http://localhost:1313"
+    h-weibo = "http://localhost:1313"
+    i-zhihu = "http://localhost:1313"
+    j-douban = "http://localhost:1313"
+    k-pocket = "http://localhost:1313"
+    l-tumblr = "http://localhost:1313"
+    m-instagram = "http://localhost:1313"
+    n-gitlab = "http://localhost:1313"
+    o-goodreads = "http://localhost:1313"
+    p-coding = "http://localhost:1313"
+    q-bilibili = "http://localhost:1313"
+    r-codeforces = "http://localhost:1313"
+    s-mastodon = "http://localhost:1313"
