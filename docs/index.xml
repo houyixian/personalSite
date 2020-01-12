@@ -6,10 +6,19 @@
     <description>Recent content on Quiet~仙哥的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 18 Dec 2019 21:55:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jan 2020 10:53:14 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.ilifeapp.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mac上hugo二进制安装</title>
+      <link>https://blog.ilifeapp.com/post/Mac%E4%B8%8Ahugo%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sun, 12 Jan 2020 10:53:14 +0800</pubDate>
+      
+      <guid>https://blog.ilifeapp.com/post/Mac%E4%B8%8Ahugo%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</guid>
+      <description>写在前面的话 最近一时兴起，想着搭建一个个人博客，搜索了一些资料后，发现目前github上hugo的stars最高，hugo又是用go语言编写的，就选择了使用hugo来搭建静态博客，在安装hugo的过程中，遇到了一些坑，在此记录一下，如果能帮到同样安装hugo的人，那就最好不过啦。</description>
+    </item>
     
     <item>
       <title>Golang Gin 实战（五）| 接收数组和 Map</title>
