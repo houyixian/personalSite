@@ -6,10 +6,28 @@
     <description>Recent content in Categories on Quiet~仙哥的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 12 Jan 2020 10:53:14 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2020 10:32:52 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.ilifeapp.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Push Notifications</title>
+      <link>https://blog.ilifeapp.com/categories/Push-Notifications/</link>
+      <pubDate>Sat, 23 May 2020 10:32:52 +0800</pubDate>
+      
+      <guid>https://blog.ilifeapp.com/categories/Push-Notifications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SpriteKit</title>
+      <link>https://blog.ilifeapp.com/categories/SpriteKit/</link>
+      <pubDate>Sat, 22 Feb 2020 11:14:18 +0800</pubDate>
+      
+      <guid>https://blog.ilifeapp.com/categories/SpriteKit/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>个人博客搭建</title>

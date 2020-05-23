@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>关于我 | Quiet~仙哥的博客</title>
-    <meta property="og:title" content="关于我 - Quiet~仙哥的博客">
+    <title>PushNotifications简介 | Quiet~仙哥的博客</title>
+    <meta property="og:title" content="PushNotifications简介 - Quiet~仙哥的博客">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content='2015-03-10T00:13:27&#43;08:00'>
+    <meta property="article:published_time" content='2020-05-23T10:32:52&#43;08:00'>
         
         
-    <meta property="article:modified_time" content='2015-03-10T00:13:27&#43;08:00'>
+    <meta property="article:modified_time" content='2020-05-23T10:32:52&#43;08:00'>
         
     <meta name="Keywords" content="iOS,swift,Quiet～仙哥,博客">
-    <meta name="description" content="《Go 实战笔记》系列作者，《Golang Gin 实战》系列作者，《Android Gradle权威指南》作者，现负责技术管理">
+    <meta name="description" content="PushNotifications简介">
         
     <meta name="author" content="Quiet~仙哥">
-    <meta property="og:url" content="https://blog.ilifeapp.com/about/">
+    <meta property="og:url" content="https://blog.ilifeapp.com/post/PushNotifications%E7%AE%80%E4%BB%8B/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -60,13 +60,13 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://blog.ilifeapp.com">首页</a>
+                    <a class="current" href="https://blog.ilifeapp.com">首页</a>
                     
                     <a  href="https://blog.ilifeapp.com/tools/" title="工具">工具</a>
                     
                     <a  href="https://blog.ilifeapp.com/archives/" title="归档">归档</a>
                     
-                    <a class="current" href="https://blog.ilifeapp.com/about/" title="关于">关于</a>
+                    <a  href="https://blog.ilifeapp.com/about/" title="关于">关于</a>
                     
                 </nav>
             </div>
@@ -145,7 +145,21 @@
 <div class="post-toc" style="position: absolute; top: 188px;">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-        <nav id="TableOfContents"></nav>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#通知处理流程">通知处理流程</a>
+      <ul>
+        <li><a href="#通知可以可以做的事情">通知可以可以做的事情</a></li>
+      </ul>
+    </li>
+    <li><a href="#note-在设计通知前一定要认真的问自己用户真的希望看到听到或者和这个通知做交互吗">Note: 在设计通知前，一定要认真的问自己，用户真的希望看到、听到或者和这个通知做交互吗？</a></li>
+    <li><a href="#远程推送">远程推送</a></li>
+    <li><a href="#安全性">安全性</a></li>
+    <li><a href="#notification-message-flow">Notification message flow</a></li>
+    <li><a href="#本地通知">本地通知</a></li>
+    <li><a href="#key-points">Key points</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 <script type="text/javascript">
@@ -177,11 +191,18 @@
 </script>
     <article class="post">
         <header>
-            <h1 class="post-title">关于我</h1>
+            <h1 class="post-title">PushNotifications简介</h1>
         </header>
         <date class="post-meta meta-date">
-            2015年3月10日
+            2020年5月23日
         </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='https://blog.ilifeapp.com/categories/Push-Notifications'>Push Notifications</a></span>
+            
+        </div>
         
         
         <div class="post-meta">
@@ -191,14 +212,62 @@
         
         
         <div class="post-content">
-            <p>《Go 实战笔记》系列作者，《Golang Gin 实战》系列作者，《Android Gradle权威指南》作者，现负责技术管理。</p>
-<p><a href="http://yuedu.baidu.com/ebook/14a722970740be1e640e9a3e">Android Gradle权威指南</a></p>
-<p>公众号，扫码关注</p>
-<p><img src="qrcode_for_weixin.jpg" alt="扫码关注"></p>
+            <h2 id="通知处理流程">通知处理流程</h2>
+<p>无论你是使用本地通知，还是使用远程通知，通过的处理流程一般都如下所示：</p>
+<ol>
+<li>Ask your user for permission to receive notifications.</li>
+<li>Optionally make changes to the message before display.</li>
+<li>Optionally add custom buttons for the user to interact with.</li>
+<li>Optionally configure a custom user interface to display the notification.</li>
+<li>Optionally take action based on what the user did with the notification.</li>
+</ol>
+<h3 id="通知可以可以做的事情">通知可以可以做的事情</h3>
+<ol>
+<li>Displaying a message.</li>
+<li>Playing a sound.</li>
+<li>Updating the badge icon on your app.</li>
+<li>Showing an image or playing a movie.</li>
+<li>Giving the user a way to pick form a few options.</li>
+<li>Anything that a UIViewController can implement.</li>
+</ol>
+<h2 id="note-在设计通知前一定要认真的问自己用户真的希望看到听到或者和这个通知做交互吗">Note: 在设计通知前，一定要认真的问自己，用户真的希望看到、听到或者和这个通知做交互吗？</h2>
+<h2 id="远程推送">远程推送</h2>
+<p>目前常见的推送几乎都是远程推送，其中静默远程推送可以用来主动的给用户的设备发送数据，这样子用户下次打开app时可以直接看到新内容，而不用等待网络请求。
+苹果基于Transport Layer Security（TLS）来构建它的Apple Push Notification service（APNs）。TLS提供隐私和数据完整，确保只有你才能给你的app发送通知。</p>
+<h2 id="安全性">安全性</h2>
+<p>你的服务，称作provider，利用TLS给苹果发送通知请求，设备使用一个APNs能识别的唯一的deviceToken。app在启动时，如果向APNs发送了认证请求，就会收到一个deviceToken，然后你把这个deviceToken存到自己的服务器上，在未来，就可以利用这个deviceToken来向对应的设备发送通知。</p>
+<p>⚠️：你不能在用户的设备上缓存deviceToken，因为假如app重新安装、从备份恢复等时，然后在启动时在向APNs请求新的deviceToken时，devceToken都会有变化。
+你可以搭建自己的服务器来发送通过通知，也可以使用很多三方服务来发送通知。</p>
+<h2 id="notification-message-flow">Notification message flow</h2>
+<ol>
+<li>During <code>application(_:didFinishLaunchingWithOptions)</code>a request is sent to APNs for a device token via registerForRemoteNotications.</li>
+<li>APNs will return a device token to your app and call <code>application(_:didRegisterForRemoteNotification)</code> or emit an error message to <code>application(_:didFailToRegisterForRemoteNotification)</code></li>
+<li>The device sends the token to a provider in either binary or hexadecimal format. The provider(Your server) will keep track of the token.</li>
+<li>The provider sends a notication request, including one or more tokens, to APNs.</li>
+<li>APNs sends a notification to each device for which a valid token was provided.</li>
+<li>如果用户开启了通知权限，并且网络状态良好，他们就能收到通知。</li>
+</ol>
+<h2 id="本地通知">本地通知</h2>
+<p>本地通知是在用户设备上创建和管理的。本地通知和远程通知拥有所有一样的特性，唯一的区别就是本地通知的触发是基于本地时间的改变、进入/退出某一个地理区域等。</p>
+<h2 id="key-points">Key points</h2>
+<p><strong>1. Push notifications allow you to interact with your users outside of the normal flow of your app.</strong></p>
+<p><strong>2. A notification can be scheduled locally based on conditions or from a remote service and “pushed” to your device.</strong></p>
+<p><strong>3. Remote notifications are the most common type, and they use a Cloud service to determine that a notification should be built and sent to the device.</strong></p>
+<p><strong>4. Notification messages remain secure because APNs utilizes cryptographic validation and authentication.</strong></p>
+<p><strong>5. A local notification is created and scheduled on the device, as opposed to being sent to the device from a remote provider.</strong></p>
 
         </div>
 
         
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://blog.ilifeapp.com">Quiet~仙哥</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://blog.ilifeapp.com/post/PushNotifications%E7%AE%80%E4%BB%8B/">https://blog.ilifeapp.com/post/PushNotifications%E7%AE%80%E4%BB%8B/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
 
 
         
@@ -207,9 +276,15 @@
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/archives/">归档</a></li>
+        <li><a href="/post/SpriteKit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">SpriteKit学习笔记</a></li>
         
-        <li><a href="/search/">搜索</a></li>
+        <li><a href="/post/Mac%E4%B8%8Ahugo%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/">Mac上hugo二进制安装</a></li>
+        
+        <li><a href="/2019/12/18/golang-gin-query-parameters-array-map.html">Golang Gin 实战（五）| 接收数组和 Map</a></li>
+        
+        <li><a href="/post/2019-12-15-golang-gin-query-parameters-source-code-analysis/">Golang Gin 实战（三）| 路由参数</a></li>
+        
+        <li><a href="/post/2019-12-13-golang-gin-parameters-in-path/">Golang Gin 实战（三）| 路由参数</a></li>
         
     </ul>
 </div>

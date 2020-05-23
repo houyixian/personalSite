@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SpriteKit on Quiet~仙哥的博客</title>
+    <link>https://blog.ilifeapp.com/categories/SpriteKit/</link>
+    <description>Recent content in SpriteKit on Quiet~仙哥的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 22 Feb 2020 11:14:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.ilifeapp.com/categories/SpriteKit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SpriteKit学习笔记</title>
+      <link>https://blog.ilifeapp.com/post/SpriteKit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 22 Feb 2020 11:14:18 +0800</pubDate>
+      
+      <guid>https://blog.ilifeapp.com/post/SpriteKit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>1、Sprites scene scene一般代表一个游戏界面。SpriteKit中所有展示在屏幕上的元素都是继承自SKNode import SpriteKit class GameScene: SKScene { // SpriteKit calls before it presents this scene in a view override func didMove(to view: SKView) { backgroundColor = SKColor.black let background = SKSpriteNode(imageNamed: &amp;quot;background&amp;quot;) background.position = CGPoint(x: size.width / 2, y: size.height / 2) background.anchorPoint = CGPoint.zero // Sprites are rotated about their anchor points. background.zRotation = CGFloat.pi / 8 addChild(background) } } 在游戏中依然使用UIViewControll</description>
+    </item>
+    
+  </channel>
+</rss>

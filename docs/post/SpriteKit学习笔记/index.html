@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>关于我 | Quiet~仙哥的博客</title>
-    <meta property="og:title" content="关于我 - Quiet~仙哥的博客">
+    <title>SpriteKit学习笔记 | Quiet~仙哥的博客</title>
+    <meta property="og:title" content="SpriteKit学习笔记 - Quiet~仙哥的博客">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content='2015-03-10T00:13:27&#43;08:00'>
+    <meta property="article:published_time" content='2020-02-22T11:14:18&#43;08:00'>
         
         
-    <meta property="article:modified_time" content='2015-03-10T00:13:27&#43;08:00'>
+    <meta property="article:modified_time" content='2020-02-22T11:14:18&#43;08:00'>
         
     <meta name="Keywords" content="iOS,swift,Quiet～仙哥,博客">
-    <meta name="description" content="《Go 实战笔记》系列作者，《Golang Gin 实战》系列作者，《Android Gradle权威指南》作者，现负责技术管理">
+    <meta name="description" content="SpriteKit学习笔记">
         
     <meta name="author" content="Quiet~仙哥">
-    <meta property="og:url" content="https://blog.ilifeapp.com/about/">
+    <meta property="og:url" content="https://blog.ilifeapp.com/post/SpriteKit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -60,13 +60,13 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://blog.ilifeapp.com">首页</a>
+                    <a class="current" href="https://blog.ilifeapp.com">首页</a>
                     
                     <a  href="https://blog.ilifeapp.com/tools/" title="工具">工具</a>
                     
                     <a  href="https://blog.ilifeapp.com/archives/" title="归档">归档</a>
                     
-                    <a class="current" href="https://blog.ilifeapp.com/about/" title="关于">关于</a>
+                    <a  href="https://blog.ilifeapp.com/about/" title="关于">关于</a>
                     
                 </nav>
             </div>
@@ -145,7 +145,22 @@
 <div class="post-toc" style="position: absolute; top: 188px;">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-        <nav id="TableOfContents"></nav>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1sprites">1、Sprites</a>
+      <ul>
+        <li><a href="#scene">scene</a></li>
+        <li><a href="#nodes-and-z-position">Nodes and z-position</a></li>
+        <li><a href="#小结adding-a-sprite-to-a-scene">小结：Adding a sprite to a scene</a></li>
+      </ul>
+    </li>
+    <li><a href="#2manual-movement">2、Manual Movement</a>
+      <ul>
+        <li><a href="#the-spritekit-game-loop">The SpriteKit game loop</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 <script type="text/javascript">
@@ -177,11 +192,18 @@
 </script>
     <article class="post">
         <header>
-            <h1 class="post-title">关于我</h1>
+            <h1 class="post-title">SpriteKit学习笔记</h1>
         </header>
         <date class="post-meta meta-date">
-            2015年3月10日
+            2020年2月22日
         </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='https://blog.ilifeapp.com/categories/SpriteKit'>SpriteKit</a></span>
+            
+        </div>
         
         
         <div class="post-meta">
@@ -191,14 +213,84 @@
         
         
         <div class="post-content">
-            <p>《Go 实战笔记》系列作者，《Golang Gin 实战》系列作者，《Android Gradle权威指南》作者，现负责技术管理。</p>
-<p><a href="http://yuedu.baidu.com/ebook/14a722970740be1e640e9a3e">Android Gradle权威指南</a></p>
-<p>公众号，扫码关注</p>
-<p><img src="qrcode_for_weixin.jpg" alt="扫码关注"></p>
+            <h2 id="1sprites">1、Sprites</h2>
+<h3 id="scene">scene</h3>
+<p>scene一般代表一个游戏界面。SpriteKit中所有展示在屏幕上的元素都是继承自SKNode</p>
+<pre><code>import SpriteKit
+
+class GameScene: SKScene {
+		// SpriteKit calls before it presents this scene in a view
+    override func didMove(to view: SKView) {
+        backgroundColor = SKColor.black
+        let background = SKSpriteNode(imageNamed: &quot;background&quot;)
+        background.position = CGPoint(x: size.width / 2, y: size.height / 2)
+        background.anchorPoint = CGPoint.zero
+        // Sprites are rotated about their anchor points.
+        background.zRotation = CGFloat.pi / 8
+        addChild(background)
+    }
+}
+</code></pre><p>在游戏中依然使用UIViewController来对游戏进行控制</p>
+<pre><code>import UIKit
+import SpriteKit
+
+class GameViewController: UIViewController {
+		override func viewDidLoad() {
+				super.viewDidLoad()
+				let scene = GameScene(size: CGSize(width: 2048, height: 1536))
+				let skView = view as! SKView
+				skView.showsFPS = true
+				skView.showsNodeCount = true
+				skView.ignoreSiblingOrder = true
+				scene.scaleMode = .aspectFill
+				skView.presentScene(scene)
+		}
+}
+		
+</code></pre><h3 id="nodes-and-z-position">Nodes and z-position</h3>
+<p>每一个node都有一个zPositon属性，默认值是0。每一个Node按照zPositon的顺序从低到高来绘制它的子nodes。</p>
+<p>如果ignoresSiblingOrder是true的话，对于zPosition相同的node，SpriteKit不保证它们的绘制顺序，也就是说，可能会存在遮挡现象。</p>
+<p>如果ignoresSiblingOrder是false的话，对于相同zPosition的nodes，它们的父node会按照它们的添加顺序来绘制它们。也就是依据addChild方法的书写顺序。</p>
+<p>通常情况下，建议将ignoresSiblingOrder设置为ture，这将允许SpriteKit执行性能优化来使游戏的运行速度更快。但是，为了避免遮挡情况的出现，将最底层的node始终置于最下面，可以将该node的zPositon置为-1.如下所示：</p>
+<p><code>background.zPositon = -1</code></p>
+<h3 id="小结adding-a-sprite-to-a-scene">小结：Adding a sprite to a scene</h3>
+<ol>
+<li>Create the sprite.</li>
+<li>Postion the sprite.</li>
+<li>Optionally set the sprite's zPostion</li>
+<li>Add the sprite to the scene graph.</li>
+</ol>
+<h2 id="2manual-movement">2、Manual Movement</h2>
+<p>有两种方式可以让sprite移动：</p>
+<ol>
+<li>actions.</li>
+<li>set the position manually over time.</li>
+</ol>
+<h3 id="the-spritekit-game-loop">The SpriteKit game loop</h3>
+<p>In each frame, SpriteKit does the following:</p>
+<ol>
+<li>Calls a method on your scene named <code>update(_:)</code>. This is where you can put code that you want to run every frame - making it the perfect spot for code that updates the position or rotation of your sprites.</li>
+<li>Does some other stuff.</li>
+<li>Renders the scene. SpriteKit then draws all of the objects that are in your scene graph, issuing OpenGL draw commands for you behind the scenes.</li>
+</ol>
+<p>Here are two tips to keep your game running fase:</p>
+<ol>
+<li>Keep <code>update(_:)</code> fast. For example, you want to avoid slow algorithms in this method since it's called each frame.</li>
+<li>Keep your node count as low as possible. For example, it's good to remove nodes from the scene graph when they're offscreen and you no longer need them.</li>
+</ol>
 
         </div>
 
         
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://blog.ilifeapp.com">Quiet~仙哥</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://blog.ilifeapp.com/post/SpriteKit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://blog.ilifeapp.com/post/SpriteKit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
 
 
         
@@ -207,9 +299,15 @@
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/archives/">归档</a></li>
+        <li><a href="/post/Mac%E4%B8%8Ahugo%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/">Mac上hugo二进制安装</a></li>
         
-        <li><a href="/search/">搜索</a></li>
+        <li><a href="/2019/12/18/golang-gin-query-parameters-array-map.html">Golang Gin 实战（五）| 接收数组和 Map</a></li>
+        
+        <li><a href="/post/2019-12-13-golang-gin-parameters-in-path/">Golang Gin 实战（三）| 路由参数</a></li>
+        
+        <li><a href="/post/2019-12-15-golang-gin-query-parameters-source-code-analysis/">Golang Gin 实战（三）| 路由参数</a></li>
+        
+        <li><a href="/about/">关于我</a></li>
         
     </ul>
 </div>

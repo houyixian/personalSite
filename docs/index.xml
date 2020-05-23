@@ -6,10 +6,28 @@
     <description>Recent content on Quiet~仙哥的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 12 Jan 2020 10:53:14 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2020 10:32:52 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.ilifeapp.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PushNotifications简介</title>
+      <link>https://blog.ilifeapp.com/post/PushNotifications%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Sat, 23 May 2020 10:32:52 +0800</pubDate>
+      
+      <guid>https://blog.ilifeapp.com/post/PushNotifications%E7%AE%80%E4%BB%8B/</guid>
+      <description>通知处理流程 无论你是使用本地通知，还是使用远程通知，通过的处理流程一般都如下所示： Ask your user for permission to receive notifications. Optionally make changes to the message before display. Optionally add custom buttons for the user to interact with. Optionally configure a custom user interface to display the notification. Optionally take action based on what the user did with the notification. 通知可以可以做的事情 Displaying a message. Playing a sound. Updating the badge icon on your app. Showing an image or playing a movie. Giving the user a way to pick form a few options. Anything that a UIViewController can implement. Note: 在设计</description>
+    </item>
+    
+    <item>
+      <title>SpriteKit学习笔记</title>
+      <link>https://blog.ilifeapp.com/post/SpriteKit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 22 Feb 2020 11:14:18 +0800</pubDate>
+      
+      <guid>https://blog.ilifeapp.com/post/SpriteKit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>1、Sprites scene scene一般代表一个游戏界面。SpriteKit中所有展示在屏幕上的元素都是继承自SKNode import SpriteKit class GameScene: SKScene { // SpriteKit calls before it presents this scene in a view override func didMove(to view: SKView) { backgroundColor = SKColor.black let background = SKSpriteNode(imageNamed: &amp;quot;background&amp;quot;) background.position = CGPoint(x: size.width / 2, y: size.height / 2) background.anchorPoint = CGPoint.zero // Sprites are rotated about their anchor points. background.zRotation = CGFloat.pi / 8 addChild(background) } } 在游戏中依然使用UIViewControll</description>
+    </item>
     
     <item>
       <title>Mac上hugo二进制安装</title>
