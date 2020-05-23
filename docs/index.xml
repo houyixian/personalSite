@@ -6,10 +6,19 @@
     <description>Recent content on Quiet~仙哥的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 23 May 2020 10:32:52 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2020 15:36:43 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.ilifeapp.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>设计模式简介</title>
+      <link>https://blog.ilifeapp.com/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Sat, 23 May 2020 15:36:43 +0800</pubDate>
+      
+      <guid>https://blog.ilifeapp.com/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E4%BB%8B/</guid>
+      <description>Design patterns are reusable, template solutions to common development problems. 掌握设计模式的好处 可以让你成为一个更好的开发者。 你可以用更少的开发时间，更少的开发工作量，来最终开发出更好的软件。 创造了一个开发者之间交流的通用语言。 使用良好设计模式的项目可以让新来的开发者快速上手。 可以让你在不同的代码中找到相似之处。 所有开发者都应该了解设计</description>
+    </item>
     
     <item>
       <title>PushNotifications简介</title>
