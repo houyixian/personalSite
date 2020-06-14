@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Golang Gin 实战（五）| 接收数组和 Map | Quiet~仙哥的博客</title>
-    <meta property="og:title" content="Golang Gin 实战（五）| 接收数组和 Map - Quiet~仙哥的博客">
+    <title>扔鸡蛋问题 动态规划 | Quiet~仙哥的博客</title>
+    <meta property="og:title" content="扔鸡蛋问题 动态规划 - Quiet~仙哥的博客">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content='2019-12-18T21:55:00&#43;08:00'>
+    <meta property="article:published_time" content='2020-06-14T17:44:07&#43;08:00'>
         
         
-    <meta property="article:modified_time" content='2019-12-18T21:55:00&#43;08:00'>
+    <meta property="article:modified_time" content='2020-06-14T17:44:07&#43;08:00'>
         
     <meta name="Keywords" content="iOS,swift,Quiet～仙哥,博客">
-    <meta name="description" content="Golang Gin 实战（五）| 接收数组和 Map">
+    <meta name="description" content="扔鸡蛋问题 动态规划">
         
     <meta name="author" content="Quiet~仙哥">
-    <meta property="og:url" content="https://blog.ilifeapp.com/2019/12/18/golang-gin-query-parameters-array-map.html">
+    <meta property="og:url" content="https://blog.ilifeapp.com/post/%E6%89%94%E9%B8%A1%E8%9B%8B%E9%97%AE%E9%A2%98-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -147,11 +147,8 @@
     <div class="post-toc-content">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#标题">标题</a></li>
-    <li><a href="#标题-1">标题</a></li>
-    <li><a href="#标题-2">标题</a></li>
-    <li><a href="#标题-3">标题</a></li>
-    <li><a href="#标题-4">标题</a></li>
+    <li><a href="#问题一名科学家正在一栋大楼进行一个实验某种材料的防护性能他在大楼底部铺下一层这个防护材料想拿鸡蛋做实验将鸡蛋从楼层掉下看看鸡蛋从哪一层掉下去会摔碎以此测试材料的防护性能这就是著名的鸡蛋掉落问题egg-dropping-problem即给定n个鸡蛋和m层楼试问至少需要几次才能确定鸡蛋从哪一层楼掉下去恰好会摔碎">问题：一名科学家正在一栋大楼进行一个实验：某种材料的防护性能。他在大楼底部铺下一层这个防护材料，想拿鸡蛋做实验，将鸡蛋从楼层掉下，看看鸡蛋从哪一层掉下去会摔碎，以此测试材料的防护性能。这就是著名的鸡蛋掉落问题（egg dropping problem），即给定N个鸡蛋和M层楼，试问至少需要几次才能确定鸡蛋从哪一层楼掉下去恰好会摔碎。</a></li>
+    <li><a href="#解答思路">解答思路</a></li>
   </ul>
 </nav>
     </div>
@@ -185,16 +182,16 @@
 </script>
     <article class="post">
         <header>
-            <h1 class="post-title">Golang Gin 实战（五）| 接收数组和 Map</h1>
+            <h1 class="post-title">扔鸡蛋问题 动态规划</h1>
         </header>
         <date class="post-meta meta-date">
-            2019年12月18日
+            2020年6月14日
         </date>
         
         <div class="post-meta">
             <span>|</span>
             
-            <span class="meta-category"><a href='https://blog.ilifeapp.com/categories/Golang'>Golang</a></span>
+            <span class="meta-category"><a href='https://blog.ilifeapp.com/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92'>动态规划</a></span>
             
         </div>
         
@@ -205,31 +202,75 @@
         </div>
         
         
-        <div class="clear" style="display: none">
-            <div class="toc-article">
-                <div class="toc-title">文章目录</div>
-            </div>
-        </div>
-        
         <div class="post-content">
-            <h2 id="标题">标题</h2>
-<p>段落内容</p>
-<h2 id="标题-1">标题</h2>
-<p>段落内容</p>
-<h2 id="标题-2">标题</h2>
-<p>段落内容</p>
-<h2 id="标题-3">标题</h2>
-<p>段落内容</p>
-<h2 id="标题-4">标题</h2>
-<p>段落内容</p>
+            <h2 id="问题一名科学家正在一栋大楼进行一个实验某种材料的防护性能他在大楼底部铺下一层这个防护材料想拿鸡蛋做实验将鸡蛋从楼层掉下看看鸡蛋从哪一层掉下去会摔碎以此测试材料的防护性能这就是著名的鸡蛋掉落问题egg-dropping-problem即给定n个鸡蛋和m层楼试问至少需要几次才能确定鸡蛋从哪一层楼掉下去恰好会摔碎">问题：一名科学家正在一栋大楼进行一个实验：某种材料的防护性能。他在大楼底部铺下一层这个防护材料，想拿鸡蛋做实验，将鸡蛋从楼层掉下，看看鸡蛋从哪一层掉下去会摔碎，以此测试材料的防护性能。这就是著名的鸡蛋掉落问题（egg dropping problem），即给定N个鸡蛋和M层楼，试问至少需要几次才能确定鸡蛋从哪一层楼掉下去恰好会摔碎。</h2>
+<h2 id="解答思路">解答思路</h2>
+<p>为了方便问题的理解以及符合编程语言的特性，我们可以认为存在楼层为0的情况，也存在鸡蛋为0的情况。当楼层为0时，不论提供的鸡蛋数量为多少，需要尝试的次数均为0次。</p>
+<p>我们先从最简单的情况入手：</p>
+<ol>
+<li>若鸡蛋的数量或者楼层的数量为0，则尝试0次即可；</li>
+<li>如果鸡蛋数为1，假如楼层数为k，最坏的情况为尝试k次，即无论以任何楼层顺序尝试摔鸡蛋，都是试到最后一层才把鸡蛋摔烂，因此至少需要k次才能确定鸡蛋从哪一层楼掉下去恰好摔碎。</li>
+</ol>
+<p>有了最简单的情况还不够，对于鸡蛋数量为n，楼层数为k的情况，还是比较复杂。此时我们可以考虑使用动画规划的思想来解决，假设用numberDrop(n, m)表示该问题的解，则将鸡蛋从k层楼扔下，有以下两种情形：</p>
+<ol>
+<li>鸡蛋摔碎了。此时剩下n-1个鸡蛋，需要考虑比k低的楼层，即1，2，。。。，k-1层。这个问题被缩减为求解numberDrop(n-1, k-1)。</li>
+<li>鸡蛋没有摔碎。此时还剩下n个鸡蛋，需要考虑比k高的楼层，即k+1， k+2，。。。，m层，共有m - k层。这个问题被缩减为求解numberDrop(n, m - k)。</li>
+</ol>
+<p>对于以上两种情形，因为要考虑最坏情况下的尝试，应该取两种尝试次数的最大值。同时，考虑到k可能为1到m之间的任意一个楼层，得出如下求解公示：</p>
+<p><img src="eggDroppingProblem1.png" alt="求解公式"></p>
+<p>结合以上，我们就可以用动态规划对该问题进行求解了，swift版本的代码如下：</p>
+<pre><code>import Foundation
 
+/// 解决扔鸡蛋问题-动画规划方式
+/// - Parameters:
+///   - eggCounts: 可以使用的鸡蛋数量
+///   - floorCounts: 需要测试的楼层数
+/// - Returns: 至少需要尝试的次数（最坏情况）
+public func solveEggQuesiton(eggCounts: Int, floorCounts: Int) -&gt; Int {
+    /// 用一个二维数组来存储特定鸡蛋数n和特定楼层数m时所至少需要尝试次数，因为考虑了鸡蛋和楼层为0的情况，所以需要+1，刚开始的默认值均为-1，代表未计算过某一情况的最少尝试次数
+    var numberDrop: [[Int]] = Array&lt;Array&lt;Int&gt;&gt;(repeating: Array&lt;Int&gt;(repeating: -1, count: floorCounts + 1), count: eggCounts + 1)
+    for eggCount in 0...eggCounts {
+        // 楼层为0
+        numberDrop[eggCount][0] = 0
+        // 楼层为1
+        numberDrop[eggCount][1] = 1
+    }
+    for floor in 0...floorCounts {
+        // 鸡蛋数量为0
+        numberDrop[0][floor] = 0
+        // 鸡蛋数量为1
+        numberDrop[1][floor] = floor
+    }
+    print(&quot;当前已确定最少尝试次数的鸡蛋楼层组合为\(numberDrop)&quot;)
+    for eggCount in 2...eggCounts {
+        for floorCount in 2...floorCounts {
+            //在计算某一个特定情形的尝试次数时，把默认值改为最大
+            numberDrop[eggCount][floorCount] = Int.max
+            // 开始计算鸡蛋数量为eggCount，楼层数为floorCount的最少尝试次数
+            for initialSelectedBeginFloor in 1...floorCount {
+                
+                let currentMax = max(numberDrop[eggCount - 1][initialSelectedBeginFloor - 1] + 1, numberDrop[eggCount][floorCount - initialSelectedBeginFloor] + 1)
+                if currentMax &lt; numberDrop[eggCount][floorCount] {
+                    numberDrop[eggCount][floorCount] = currentMax
+                }
+                print(&quot;当前数组中的值为\(numberDrop)&quot;)
+            }
+            // 鸡蛋数量为eggCount，楼层数为floorCount的最少尝试次数已经计算完毕，后续循环的计算都是基于现在及之前计算好的确定值
+            print(&quot;\(eggCount)个鸡蛋\(floorCount)层楼的情况已经计算完毕-------------\n&quot;)
+        }
+    }
+    return numberDrop[eggCounts][floorCounts]
+}
+
+solveEggQuesiton(eggCounts: 2, floorCounts: 10)
+</code></pre>
         </div>
 
         
 <div class="post-archive">
     <ul class="post-copyright">
         <li><strong>原文作者：</strong><a rel="author" href="https://blog.ilifeapp.com">Quiet~仙哥</a></li>
-        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://blog.ilifeapp.com/2019/12/18/golang-gin-query-parameters-array-map.html">https://blog.ilifeapp.com/2019/12/18/golang-gin-query-parameters-array-map.html</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://blog.ilifeapp.com/post/%E6%89%94%E9%B8%A1%E8%9B%8B%E9%97%AE%E9%A2%98-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">https://blog.ilifeapp.com/post/%E6%89%94%E9%B8%A1%E8%9B%8B%E9%97%AE%E9%A2%98-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</a></li>
         <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
     </ul>
 </div>
@@ -243,15 +284,15 @@
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/post/2019-12-13-golang-gin-parameters-in-path/">Golang Gin 实战（三）| 路由参数</a></li>
+        <li><a href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E4%BB%8B/">设计模式简介</a></li>
         
-        <li><a href="/post/2019-12-15-golang-gin-query-parameters-source-code-analysis/">Golang Gin 实战（三）| 路由参数</a></li>
+        <li><a href="/post/PushNotifications%E7%AE%80%E4%BB%8B/">PushNotifications简介</a></li>
         
-        <li><a href="/about/">关于我</a></li>
+        <li><a href="/post/SpriteKit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">SpriteKit学习笔记</a></li>
         
-        <li><a href="/archives/">归档</a></li>
+        <li><a href="/post/Mac%E4%B8%8Ahugo%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/">Mac上hugo二进制安装</a></li>
         
-        <li><a href="/search/">搜索</a></li>
+        <li><a href="/2019/12/18/golang-gin-query-parameters-array-map.html">Golang Gin 实战（五）| 接收数组和 Map</a></li>
         
     </ul>
 </div>
@@ -259,11 +300,7 @@
 
         <div class="post-meta meta-tags">
             
-            <ul class="clearfix">
-                
-                <li><a href='https://blog.ilifeapp.com/tags/golang'>golang</a></li>
-                
-            </ul>
+            没有标签
             
         </div>
     </article>
