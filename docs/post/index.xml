@@ -56,32 +56,5 @@
       <description>写在前面的话 最近一时兴起，想着搭建一个个人博客，搜索了一些资料后，发现目前github上hugo的stars最高，hugo又是用go语言编写的，就选择了使用hugo来搭建静态博客，在安装hugo的过程中，遇到了一些坑，在此记录一下，如果能帮到同样安装hugo的人，那就最好不过啦。</description>
     </item>
     
-    <item>
-      <title>Golang Gin 实战（五）| 接收数组和 Map</title>
-      <link>https://blog.ilifeapp.com/2019/12/18/golang-gin-query-parameters-array-map.html</link>
-      <pubDate>Wed, 18 Dec 2019 21:55:00 +0800</pubDate>
-      
-      <guid>https://blog.ilifeapp.com/2019/12/18/golang-gin-query-parameters-array-map.html</guid>
-      <description>标题 段落内容 标题 段落内容 标题 段落内容 标题 段落内容 标题 段落内容</description>
-    </item>
-    
-    <item>
-      <title>Golang Gin 实战（三）| 路由参数</title>
-      <link>https://blog.ilifeapp.com/post/2019-12-13-golang-gin-parameters-in-path/</link>
-      <pubDate>Fri, 13 Dec 2019 21:00:00 +0800</pubDate>
-      
-      <guid>https://blog.ilifeapp.com/post/2019-12-13-golang-gin-parameters-in-path/</guid>
-      <description>标题 段落内容 标题 段落内容 标题 段落内容 标题 段落内容 标题 段落内容</description>
-    </item>
-    
-    <item>
-      <title>Golang Gin 实战（三）| 路由参数</title>
-      <link>https://blog.ilifeapp.com/post/2019-12-15-golang-gin-query-parameters-source-code-analysis/</link>
-      <pubDate>Fri, 13 Dec 2019 21:00:00 +0800</pubDate>
-      
-      <guid>https://blog.ilifeapp.com/post/2019-12-15-golang-gin-query-parameters-source-code-analysis/</guid>
-      <description>标题 段落内容 标题 段落内容 标题 段落内容 标题 段落内容 标题 段落内容</description>
-    </item>
-    
   </channel>
 </rss>

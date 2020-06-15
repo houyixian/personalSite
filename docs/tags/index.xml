@@ -6,19 +6,9 @@
     <description>Recent content in Tags on Quiet~仙哥的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 18 Dec 2019 21:55:00 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.ilifeapp.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>golang</title>
-      <link>https://blog.ilifeapp.com/tags/golang/</link>
-      <pubDate>Wed, 18 Dec 2019 21:55:00 +0800</pubDate>
-      
-      <guid>https://blog.ilifeapp.com/tags/golang/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>
