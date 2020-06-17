@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Quiet~仙哥的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 14 Jun 2020 17:44:07 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jun 2020 14:55:33 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.ilifeapp.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>swift</title>
+      <link>https://blog.ilifeapp.com/categories/swift/</link>
+      <pubDate>Wed, 17 Jun 2020 14:55:33 +0800</pubDate>
+      
+      <guid>https://blog.ilifeapp.com/categories/swift/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>动态规划</title>

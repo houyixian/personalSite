@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Quiet~仙哥的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 14 Jun 2020 17:44:07 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jun 2020 14:55:33 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.ilifeapp.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Swift捕获列表浅析</title>
+      <link>https://blog.ilifeapp.com/post/swift%E6%8D%95%E8%8E%B7%E5%88%97%E8%A1%A8%E6%B5%85%E6%9E%90/</link>
+      <pubDate>Wed, 17 Jun 2020 14:55:33 +0800</pubDate>
+      
+      <guid>https://blog.ilifeapp.com/post/swift%E6%8D%95%E8%8E%B7%E5%88%97%E8%A1%A8%E6%B5%85%E6%9E%90/</guid>
+      <description>Closures（闭包） 捕获列表（capture list）和闭包密不可分。 Closures capture values from the enclosing scope. 因为swift是一门安全的语言，闭包延长了它所使用的任何对象的生命周期，以此来保证这些对象是可用的和合法的。这个自动的安全性很好，但它也容易带来一些副作用，比如容易导致引用循环。最常见的场景就</description>
+    </item>
     
     <item>
       <title>扔鸡蛋问题 动态规划</title>
