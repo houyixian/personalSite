@@ -6,10 +6,19 @@
     <description>Recent content in swift on Quiet~仙哥的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 17 Jun 2020 14:55:33 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2020 21:27:10 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.ilifeapp.com/categories/swift/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Swift语言重点记录</title>
+      <link>https://blog.ilifeapp.com/post/swift%E8%AF%AD%E8%A8%80%E9%87%8D%E7%82%B9%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Mon, 17 Aug 2020 21:27:10 +0800</pubDate>
+      
+      <guid>https://blog.ilifeapp.com/post/swift%E8%AF%AD%E8%A8%80%E9%87%8D%E7%82%B9%E8%AE%B0%E5%BD%95/</guid>
+      <description>Classes Structures vs. classes Structures Useful for representing values. Implicit copying of values. Becomes completely immutable when declared with let. Fast memory allocation(stack). Classes Useful for representing objects with an identity. Implicity sharing of objects. Internals can remain mutable even when declared with let. Slower memory allocation(heap). A general understanding of stack and heap Stack The System uses the stack to store anything on the immediate thread of execution; it&amp;rsquo;s tightly managed and optimized by the CPU. When a function creates a variable, the stack stores that variable and then destroys it when the function exits. Since the stack is so strictly organized, it&amp;rsquo;s very efficient, and thus quite fast. Heap The system uses the heap to store instances of reference types. The heap is generally a large pool of memory from which the system can request and dynamically allocate</description>
+    </item>
     
     <item>
       <title>Swift捕获列表浅析</title>

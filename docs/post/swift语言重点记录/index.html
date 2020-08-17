@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Mac上hugo二进制安装 | Quiet~仙哥的博客</title>
-    <meta property="og:title" content="Mac上hugo二进制安装 - Quiet~仙哥的博客">
+    <title>Swift语言重点记录 | Quiet~仙哥的博客</title>
+    <meta property="og:title" content="Swift语言重点记录 - Quiet~仙哥的博客">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content='2020-01-12T10:53:14&#43;08:00'>
+    <meta property="article:published_time" content='2020-08-17T21:27:10&#43;08:00'>
         
         
-    <meta property="article:modified_time" content='2020-01-12T10:53:14&#43;08:00'>
+    <meta property="article:modified_time" content='2020-08-17T21:27:10&#43;08:00'>
         
     <meta name="Keywords" content="iOS,swift,Quiet～仙哥,博客">
-    <meta name="description" content="Mac上hugo二进制安装">
+    <meta name="description" content="Swift语言重点记录">
         
     <meta name="author" content="Quiet~仙哥">
-    <meta property="og:url" content="https://blog.ilifeapp.com/post/Mac%E4%B8%8Ahugo%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/">
+    <meta property="og:url" content="https://blog.ilifeapp.com/post/swift%E8%AF%AD%E8%A8%80%E9%87%8D%E7%82%B9%E8%AE%B0%E5%BD%95/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -147,13 +147,19 @@
     <div class="post-toc-content">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#写在前面的话">写在前面的话</a>
+    <li><a href="#structures-vs-classes">Structures vs. classes</a>
       <ul>
-        <li><a href="#hugo安装方法">hugo安装方法</a></li>
-        <li><a href="#二进制hugo下载">二进制hugo下载</a></li>
-        <li><a href="#二进制hugo安装">二进制hugo安装</a></li>
+        <li><a href="#structures">Structures</a></li>
+        <li><a href="#classes-1">Classes</a></li>
       </ul>
     </li>
+    <li><a href="#a-general-understanding-of-stack-and-heap">A general understanding of stack and heap</a>
+      <ul>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#heap">Heap</a></li>
+      </ul>
+    </li>
+    <li><a href="#key-points">Key points</a></li>
   </ul>
 </nav>
     </div>
@@ -187,16 +193,16 @@
 </script>
     <article class="post">
         <header>
-            <h1 class="post-title">Mac上hugo二进制安装</h1>
+            <h1 class="post-title">Swift语言重点记录</h1>
         </header>
         <date class="post-meta meta-date">
-            2020年1月12日
+            2020年8月17日
         </date>
         
         <div class="post-meta">
             <span>|</span>
             
-            <span class="meta-category"><a href='https://blog.ilifeapp.com/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA'>个人博客搭建</a></span>
+            <span class="meta-category"><a href='https://blog.ilifeapp.com/categories/swift'>swift</a></span>
             
         </div>
         
@@ -208,41 +214,42 @@
         
         
         <div class="post-content">
-            <h2 id="写在前面的话">写在前面的话</h2>
-<p>最近一时兴起，想着搭建一个个人博客，搜索了一些资料后，发现目前github上hugo的stars最高，hugo又是用go语言编写的，就选择了使用hugo来搭建静态博客，在安装hugo的过程中，遇到了一些坑，在此记录一下，如果能帮到同样安装hugo的人，那就最好不过啦。</p>
-<h3 id="hugo安装方法">hugo安装方法</h3>
-<p>安装方法官网上有好几种，最简单的方式应该是通过homebrew来安装，只需要一条命令，如下所示：</p>
-<p><code>brew install hugo</code></p>
-<p>但是似乎是由于一些资源在国外，导致了很多奇奇怪怪的网络问题，一直没成功，最终选择了二进制方式来安装，只需要从官网下载一个二进制包即可。</p>
-<h3 id="二进制hugo下载">二进制hugo下载</h3>
-<p><a href="https://github.com/gohugoio/hugo/releases">hugo二进制下载</a></p>
-<p>hugo二进制目前支持很多系统，包括macOS、Windows、Linux、OpenBSD、FreeBSD。选择自己系统对应的二进制文件下载即可。</p>
-<h3 id="二进制hugo安装">二进制hugo安装</h3>
-<p>我这里下载的文件是hugo_0.62.2_macOS-64bit.tar。首先，先去用户级别的bin目录里，创建一个hugo文件夹，用来存放我们的hugo二进制包。</p>
-<p><code>cd /usr/local/bin</code></p>
-<p>然后创建hugo文件夹</p>
-<p><code>mkdir hugo</code></p>
-<p>然后去到hugo_0.62.2_macOS-64bit.tar所在的根目录</p>
-<p><code>cd ~/Downloads</code></p>
-<p>把hugo_0.62.2_macOS-64bit.tar复制到刚刚创建的hugo文件夹里</p>
-<p><code>cp hugo_0.62.2_macOS-64bit.tar /usr/local/bin/hugo</code></p>
-<p>然后进入到刚刚创建的hugo文件夹里</p>
-<p><code>cd /usr/local/bin/hugo</code></p>
-<p>解压hugo二进制压缩包到当前目录里</p>
-<p><code>tar -zxvf hugo_0.62.2_macOS-64bit.tar</code></p>
-<p>至此，我们的hugo已经安装完成了，但是当我们在终端执行hugo version时并没有效果，因为系统还不知道去哪里找hugo。下面，我们来添加环境变量，让系统可以找到hugo。首先，打开用户级别的.bash_profile文件</p>
-<p><code>vim ~/.bash_profile</code></p>
-<p>增加一条环境变量配置</p>
-<p><code>export PATH=$PATH:/usr/local/bin/hugo</code></p>
-<p>然后再进入到.zshrc文件中</p>
-<p><code>vim ~/.zshrc</code></p>
-<p>增加一条环境变量</p>
-<p><code>export PATH=&quot;$PATH:/usr/local/bin/hugo&quot; # Add hugo to PATH for scripting</code></p>
-<p>然后退出terminal重新登陆或者执行</p>
-<p><code>source ~/.bash_profile</code></p>
-<p>现在，再在终端执行hugo version。如果你看到了和下面类似的话，就代表你安装成功啦，恭喜哦。如果你还是看到了错误的提示，那就再仔细看看这篇安装过程或者查查其他资料呀，good luck！</p>
-<p><code>Hugo Static Site Generator v0.62.2-83E50184 darwin/amd64 BuildDate: 2020-01-05T18:50:42Z</code></p>
-<p>希望我的文章对你有帮助，如果有问题的话，欢迎加我的微信一起讨论呀。</p>
+            <h1 id="classes">Classes</h1>
+<h2 id="structures-vs-classes">Structures vs. classes</h2>
+<h3 id="structures">Structures</h3>
+<ol>
+<li>Useful for representing values.</li>
+<li>Implicit copying of values.</li>
+<li>Becomes completely immutable when declared with let.</li>
+<li>Fast memory allocation(stack).</li>
+</ol>
+<h3 id="classes-1">Classes</h3>
+<ol>
+<li>Useful for representing objects with an identity.</li>
+<li>Implicity sharing of objects.</li>
+<li>Internals can remain mutable even when declared with let.</li>
+<li>Slower memory allocation(heap).</li>
+</ol>
+<h2 id="a-general-understanding-of-stack-and-heap">A general understanding of stack and heap</h2>
+<h3 id="stack">Stack</h3>
+<p>The System uses the stack to store anything on the immediate thread of execution; it&rsquo;s tightly managed and optimized by the CPU. When a function creates a variable, the stack stores that variable and then destroys it when the function exits. Since the stack is so strictly organized, it&rsquo;s very efficient, and thus quite fast.</p>
+<h3 id="heap">Heap</h3>
+<p>The system uses the heap to store instances of reference types. The heap is generally a large pool of memory from which the system can request and dynamically allocate blocks of memory. Lifetime is flexible and dynamic.</p>
+<p>The heap doesn&rsquo;t automatically destroy its data like the stack does; additional work is required to do that. This makes creating and removing data on the heap a slower process, compared to on the stack.</p>
+<h2 id="key-points">Key points</h2>
+<ol>
+<li>Like structures, classes are a named type that can have properties and methods.</li>
+<li>Classes use references that are shared on assignment.</li>
+<li>Class instances are called objects.</li>
+<li>Objects are mutable.</li>
+<li>Mutability introduces state, which adds complexity when managing your objects.</li>
+<li>Use classes when you want reference semantics; structures for value semantics.</li>
+<li>A class doesn&rsquo;t provide a memberwise initializer automatically.</li>
+<li>In Swift, an instance of a structure is an immutable value whereas an instance of a class is a mutable object.</li>
+<li>In Swift, uses === operator to check if the identity of one object is equal to the identity of another.</li>
+<li>When you change the value of a struct, instead of modifying the value, you&rsquo;re making a new value. The keyword mutating marks methods that replace the current value with a new one. With classes, this keyword is not used because the instance itself is mutable.</li>
+<li>The vary nature of classes is that they are both referenced and mutable, so you must care about their state and side effects.</li>
+</ol>
 
         </div>
 
@@ -250,7 +257,7 @@
 <div class="post-archive">
     <ul class="post-copyright">
         <li><strong>原文作者：</strong><a rel="author" href="https://blog.ilifeapp.com">Quiet~仙哥</a></li>
-        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://blog.ilifeapp.com/post/Mac%E4%B8%8Ahugo%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/">https://blog.ilifeapp.com/post/Mac%E4%B8%8Ahugo%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://blog.ilifeapp.com/post/swift%E8%AF%AD%E8%A8%80%E9%87%8D%E7%82%B9%E8%AE%B0%E5%BD%95/">https://blog.ilifeapp.com/post/swift%E8%AF%AD%E8%A8%80%E9%87%8D%E7%82%B9%E8%AE%B0%E5%BD%95/</a></li>
         <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
     </ul>
 </div>
@@ -264,11 +271,15 @@
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/about/">关于我</a></li>
+        <li><a href="/post/swift%E6%8D%95%E8%8E%B7%E5%88%97%E8%A1%A8%E6%B5%85%E6%9E%90/">Swift捕获列表浅析</a></li>
         
-        <li><a href="/archives/">归档</a></li>
+        <li><a href="/post/%E6%89%94%E9%B8%A1%E8%9B%8B%E9%97%AE%E9%A2%98-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">扔鸡蛋问题 动态规划</a></li>
         
-        <li><a href="/search/">搜索</a></li>
+        <li><a href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E4%BB%8B/">设计模式简介</a></li>
+        
+        <li><a href="/post/PushNotifications%E7%AE%80%E4%BB%8B/">PushNotifications简介</a></li>
+        
+        <li><a href="/post/SpriteKit%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">SpriteKit学习笔记</a></li>
         
     </ul>
 </div>
