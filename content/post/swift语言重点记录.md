@@ -5,6 +5,20 @@ draft: false
 categories: ["swift"]
 ---
 
+# Structures
+
+Initializers enforce that all properties are set before you start using them. This is one of the key safety features of swift.
+
+A value type is a type whose instances are copied on assignment(copy on assignment).
+
+## Key points
+
+1. Structures are named types you can define and use in your code.
+2. Structures are value types, which means their values are copied on assignment.
+3. You use dot syntax to access the members of named types such as sructures.
+4. Named types can have their own variables and functions, which are callled properties and methods.
+5. Confoming to a protocol requires implementing the properties and methods required by that protocol.
+
 # Classes
 
 ## Structures vs. classes
