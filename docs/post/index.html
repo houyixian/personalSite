@@ -98,7 +98,7 @@
         </div>
         
         <div class="post-content">
-            Classes Structures vs. classes Structures Useful for representing values. Implicit copying of values. Becomes completely immutable when declared with let. Fast memory allocation(stack). Classes Useful for representing objects with an identity. Implicity sharing of objects. Internals can remain mutable even when declared with let. Slower memory allocation(heap). A general understanding of stack and heap Stack The System uses the stack to store anything on the immediate thread of execution; it&rsquo;s tightly managed and optimized by the CPU. When a function creates a variable, the stack stores that variable and then destroys it when the function exits. Since the stack is so strictly organized, it&rsquo;s very efficient, and thus quite fast. Heap The system uses the heap to store instances of reference types. The heap is generally a large pool of memory from which the system can request and dynamically allocate……
+            Structures Initializers enforce that all properties are set before you start using them. This is one of the key safety features of swift. A value type is a type whose instances are copied on assignment(copy on assignment). Key points Structures are named types you can define and use in your code. Structures are value types, which means their values are copied on assignment. You use dot syntax to access the members of named types such as sructures. Named types can have their own variables and functions, which are callled properties and methods. Confoming to a protocol requires implementing the properties and methods required by that protocol. Classes Structures vs. classes Structures Useful for representing values. Implicit copying of values. Becomes completely immutable when declared with let. Fast memory allocation(stack). Classes Useful for representing objects with an identity. Implicity sharing of……
         </div>
         <p class="readmore"><a href="https://blog.ilifeapp.com/post/swift%E8%AF%AD%E8%A8%80%E9%87%8D%E7%82%B9%E8%AE%B0%E5%BD%95/">阅读全文</a></p>
     </article>
@@ -397,7 +397,7 @@
     </div>
     <footer id="footer">
     <div class="container">
-        &copy; 2020 <a href="https://blog.ilifeapp.com">Quiet~仙哥的博客 By Quiet~仙哥</a>.
+        &copy; 2022 <a href="https://blog.ilifeapp.com">Quiet~仙哥的博客 By Quiet~仙哥</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
         <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
         

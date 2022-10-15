@@ -147,9 +147,13 @@
     <div class="post-toc-content">
         <nav id="TableOfContents">
   <ul>
+    <li><a href="#key-points">Key points</a></li>
+  </ul>
+
+  <ul>
     <li><a href="#structures-vs-classes">Structures vs. classes</a>
       <ul>
-        <li><a href="#structures">Structures</a></li>
+        <li><a href="#structures-1">Structures</a></li>
         <li><a href="#classes-1">Classes</a></li>
       </ul>
     </li>
@@ -159,7 +163,7 @@
         <li><a href="#heap">Heap</a></li>
       </ul>
     </li>
-    <li><a href="#key-points">Key points</a></li>
+    <li><a href="#key-points-1">Key points</a></li>
   </ul>
 </nav>
     </div>
@@ -214,9 +218,20 @@
         
         
         <div class="post-content">
-            <h1 id="classes">Classes</h1>
+            <h1 id="structures">Structures</h1>
+<p>Initializers enforce that all properties are set before you start using them. This is one of the key safety features of swift.</p>
+<p>A value type is a type whose instances are copied on assignment(copy on assignment).</p>
+<h2 id="key-points">Key points</h2>
+<ol>
+<li>Structures are named types you can define and use in your code.</li>
+<li>Structures are value types, which means their values are copied on assignment.</li>
+<li>You use dot syntax to access the members of named types such as sructures.</li>
+<li>Named types can have their own variables and functions, which are callled properties and methods.</li>
+<li>Confoming to a protocol requires implementing the properties and methods required by that protocol.</li>
+</ol>
+<h1 id="classes">Classes</h1>
 <h2 id="structures-vs-classes">Structures vs. classes</h2>
-<h3 id="structures">Structures</h3>
+<h3 id="structures-1">Structures</h3>
 <ol>
 <li>Useful for representing values.</li>
 <li>Implicit copying of values.</li>
@@ -236,7 +251,7 @@
 <h3 id="heap">Heap</h3>
 <p>The system uses the heap to store instances of reference types. The heap is generally a large pool of memory from which the system can request and dynamically allocate blocks of memory. Lifetime is flexible and dynamic.</p>
 <p>The heap doesn&rsquo;t automatically destroy its data like the stack does; additional work is required to do that. This makes creating and removing data on the heap a slower process, compared to on the stack.</p>
-<h2 id="key-points">Key points</h2>
+<h2 id="key-points-1">Key points</h2>
 <ol>
 <li>Like structures, classes are a named type that can have properties and methods.</li>
 <li>Classes use references that are shared on assignment.</li>
@@ -462,7 +477,7 @@
     </div>
     <footer id="footer">
     <div class="container">
-        &copy; 2020 <a href="https://blog.ilifeapp.com">Quiet~仙哥的博客 By Quiet~仙哥</a>.
+        &copy; 2022 <a href="https://blog.ilifeapp.com">Quiet~仙哥的博客 By Quiet~仙哥</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
         <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
         
