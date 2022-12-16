@@ -6,10 +6,28 @@
     <description>Recent content on Quiet~仙哥的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 15 Oct 2022 16:36:14 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 15 Oct 2022 16:41:17 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.ilifeapp.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>关于我</title>
+      <link>https://blog.ilifeapp.com/about/</link>
+      <pubDate>Fri, 16 Dec 2022 00:13:27 +0000</pubDate>
+      
+      <guid>https://blog.ilifeapp.com/about/</guid>
+      <description>还没有介绍啦～</description>
+    </item>
+    
+    <item>
+      <title>iOS组件化</title>
+      <link>https://blog.ilifeapp.com/post/iOS%E7%BB%84%E4%BB%B6%E5%8C%96/</link>
+      <pubDate>Sat, 15 Oct 2022 16:41:17 +0800</pubDate>
+      
+      <guid>https://blog.ilifeapp.com/post/iOS%E7%BB%84%E4%BB%B6%E5%8C%96/</guid>
+      <description>组件化的优势 基于cocoapods的一种组件化方案 用Xcode新建一个空项目 pod init（会自动生成Podfile） 新建一个你想放置组件库的目录，在该目录里创建各种组件库 pod lib create 创建组件库。组件库默认是一个单独的git repo。需要删除git相关文件，让组件属于整个项目。 在Podfi</description>
+    </item>
     
     <item>
       <title>Hugo基本使用</title>
@@ -81,15 +99,6 @@
       
       <guid>https://blog.ilifeapp.com/post/Mac%E4%B8%8Ahugo%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</guid>
       <description>写在前面的话 最近一时兴起，想着搭建一个个人博客，搜索了一些资料后，发现目前github上hugo的stars最高，hugo又是用go语言编写的，就选择了使用hugo来搭建静态博客，在安装hugo的过程中，遇到了一些坑，在此记录一下，如果能帮到同样安装hugo的人，那就最好不过啦。</description>
-    </item>
-    
-    <item>
-      <title>关于我</title>
-      <link>https://blog.ilifeapp.com/about/</link>
-      <pubDate>Tue, 10 Mar 2015 00:13:27 +0000</pubDate>
-      
-      <guid>https://blog.ilifeapp.com/about/</guid>
-      <description>《Go 实战笔记》系列作者，《Golang Gin 实战》系列作者，《Android Gradle权威指南》作者，现负责技术管理。 Android Gradle权威指南 公众号，扫码关注</description>
     </item>
     
     <item>

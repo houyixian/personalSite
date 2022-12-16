@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Quiet~仙哥的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 15 Oct 2022 16:36:14 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 15 Oct 2022 16:41:17 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.ilifeapp.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>iOS组件化</title>
+      <link>https://blog.ilifeapp.com/post/iOS%E7%BB%84%E4%BB%B6%E5%8C%96/</link>
+      <pubDate>Sat, 15 Oct 2022 16:41:17 +0800</pubDate>
+      
+      <guid>https://blog.ilifeapp.com/post/iOS%E7%BB%84%E4%BB%B6%E5%8C%96/</guid>
+      <description>组件化的优势 基于cocoapods的一种组件化方案 用Xcode新建一个空项目 pod init（会自动生成Podfile） 新建一个你想放置组件库的目录，在该目录里创建各种组件库 pod lib create 创建组件库。组件库默认是一个单独的git repo。需要删除git相关文件，让组件属于整个项目。 在Podfi</description>
+    </item>
     
     <item>
       <title>Hugo基本使用</title>
